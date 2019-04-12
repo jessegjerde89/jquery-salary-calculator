@@ -1,6 +1,6 @@
 $(document).ready (readyNow)
 
-
+let employee = []
 
 function readyNow(){
 
@@ -21,7 +21,9 @@ function addClick(){
 
     //<tb id="tableBody"></tb>
     console.log(newEmployee); 
-    $('#tableBody').push(newEmployee); 
+    emlpoyee.push(newEmployee); 
+    $(' tb ').push(employee); 
+
 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
 }
