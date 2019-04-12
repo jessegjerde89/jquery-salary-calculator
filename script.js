@@ -6,6 +6,7 @@ function readyNow(){
 
 $('#addEmployee').click('on', addClick );
 $('#removeEmployee').click('on', removeClick );
+showEmployee( newEmployee )
 }
 
 //Adds users to the dom
@@ -22,10 +23,17 @@ function addClick(){
     //<tb id="tableBody"></tb>
     console.log(newEmployee); 
     emlpoyee.push(newEmployee); 
-    $(' tb ').push(employee); 
-
 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
+}
+
+function showEmployee(employees){
+    for( let i = 0; i<emlpoyee.length; i++){
+        const addedEmployee = `<li>${ arrayToShow[i].size },
+            ${ emlpoyees[i].color }: 
+            ${ employees[i].description }</li>`;
+        $(' tb ').append( addedEmployee );
+    }
 }
 
 //Removes users to the dom
