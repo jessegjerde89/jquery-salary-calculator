@@ -6,7 +6,7 @@ function readyNow(){
 
 $('#addEmployee').click('on', addClick );
 $('#removeEmployee').click('on', removeClick );
-showEmployee( newEmployee )
+showEmployee( employee )
 }
 
 //Adds users to the dom
@@ -21,20 +21,35 @@ function addClick(){
     }
 
     //<tb id="tableBody"></tb>
-    console.log(newEmployee); 
-    emlpoyee.push(newEmployee); 
+    
+    employee.push(newEmployee); 
+   $('#newEmployee').append(employee);
+
+   function showEmployee(employees){
+    for( let i = 0; i<employees.length; i++){
+        const addedEmployee = `<td> ${ employees[i].fName },
+            ${ employees[i].lName},
+            ${ employees[i].id},
+            ${ employees[i].title}, 
+            ${ employees[i].salary} </td>`;
+            $('#newEmployeee').push( addedEmployee );
+        }
+}
+    showEmployee(); 
 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
 }
 
-function showEmployee(employees){
-    for( let i = 0; i<emlpoyee.length; i++){
-        const addedEmployee = `<li>${ arrayToShow[i].size },
-            ${ emlpoyees[i].color }: 
-            ${ employees[i].description }</li>`;
-        $(' tb ').append( addedEmployee );
-    }
-}
+// function showEmployee(employees){
+//     for( let i = 0; i<employees.length; i++){
+//         const addedEmployee = `<td> ${ employees[i].fName },
+//             ${ employees[i].lName},
+//             ${ employees[i].id},
+//             ${ employees[i].title}, 
+//             ${ employees[i].salary} </td>`;
+//             $('#newEmployeee').push( addedEmployee );
+//         }
+// }
 
 //Removes users to the dom
 function removeClick(){

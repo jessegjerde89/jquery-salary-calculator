@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
@@ -15,25 +17,35 @@
 
 
     <h3> Add Employee</h3>
-    <input id="FName" placeholder="First Name" />
-    <input id="LName" placeholder="Last Name" />
-    <input id="ID" placeholder="ID" />
-    <input id="Title" placeholder="Title" />
-    <input id="ASalary"  placeholder="Annual Salary" />
+        
+        <div class="inputClass">
+            <input id="FName" placeholder="First Name" />
+            <input id="LName" placeholder="Last Name" />
+            <input id="ID" placeholder="ID" />
+            <input id="Title" placeholder="Title" />
+            <input id="ASalary"  placeholder="Annual Salary" />
+        </div>
 
     <button id="addEmployee">Add Employee</button>
     <h3> Employees </h3>
    
-    <table>
-        <tbody>
+    <table id='newEmployee'>
+        <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>ID</th>
             <th>Title</th>
-            <tr></tr>
-            <tb> </tb>
-        </tbody>
+            <th>Salary</th>
+        </tr>
+        <tr id='newEmployeee'>
+
+
+        </tr>
+    
     </table>
+    
+
+    </ul>
     <button id="removeEmployee">Remove Employee</button>
 
     <h2> Total Monthy : </h2>
