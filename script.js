@@ -1,6 +1,7 @@
 $(document).ready(readyNow); 
 
-let employee = []
+let employee = []; 
+let salaryArray = []; 
 
 function readyNow(){
 
@@ -23,11 +24,12 @@ function addClick(){
     //<tb id="tableBody"></tb>
     
    employee.push(newEmployee); 
+   
    console.log(employee);
-   if (employee.fName === '' || employee.lName === '' || 
-      employee.id === '' || employee.title === '' || employee.salary === ''){
+   if (employee.fName =='' || employee.lName == '' || 
+      employee.id == '' || employee.title == '' || employee.salary == ''){
         alert ( 'Please enter values for all fields'); 
-      } else{
+      } else {
     showEmployee(employee); 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
       }
@@ -44,8 +46,9 @@ function showEmployee( employees ){
            <td> ${ employees[i].title}</td>, 
            <td> ${ employees[i].salary} </td> </tr> `;
            
-        
+           
            newEmp.append(addedEmployee);
+           console.log(newEmp);
         }
 } 
 
