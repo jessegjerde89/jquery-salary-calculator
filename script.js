@@ -1,4 +1,4 @@
-$(document).ready (readyNow)
+$(document).ready(readyNow); 
 
 let employee = []
 
@@ -22,34 +22,32 @@ function addClick(){
 
     //<tb id="tableBody"></tb>
     
-    employee.push(newEmployee); 
-   $('#newEmployee').append(employee);
-
-   function showEmployee(employees){
-    for( let i = 0; i<employees.length; i++){
-        const addedEmployee = `<td> ${ employees[i].fName },
-            ${ employees[i].lName},
-            ${ employees[i].id},
-            ${ employees[i].title}, 
-            ${ employees[i].salary} </td>`;
-            $('#newEmployeee').push( addedEmployee );
-        }
-}
-    showEmployee(); 
-
+   employee.push(newEmployee); 
+   console.log(employee);
+   if (employee.fName === '' || employee.lName === '' || 
+      employee.id === '' || employee.title === '' || employee.salary === ''){
+        alert ( 'Please enter values for all fields'); 
+      } else{
+    showEmployee(employee); 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
+      }
 }
 
-// function showEmployee(employees){
-//     for( let i = 0; i<employees.length; i++){
-//         const addedEmployee = `<td> ${ employees[i].fName },
-//             ${ employees[i].lName},
-//             ${ employees[i].id},
-//             ${ employees[i].title}, 
-//             ${ employees[i].salary} </td>`;
-//             $('#newEmployeee').push( addedEmployee );
-//         }
-// }
+function showEmployee( employees ){
+    let newEmp = $('#newEmployee')
+    newEmp.empty(); 
+    
+    for( let i = 0; i < employees.length; i++){
+        const addedEmployee = `<tr> <td> ${ employees[i].fName }</td>,
+           <td> ${ employees[i].lName}</td>,
+           <td> ${ employees[i].id}</td>,
+           <td> ${ employees[i].title}</td>, 
+           <td> ${ employees[i].salary} </td> </tr> `;
+           
+        
+           newEmp.append(addedEmployee);
+        }
+} 
 
 //Removes users to the dom
 function removeClick(){
