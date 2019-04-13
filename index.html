@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
 </head>
-<body>
-    <h1> Salary Calculator </h1>
+<body class ="container">
+    <h1 class="jumbotron"> Salary Calculator </h1>
 
 
     <h3> Add Employee</h3>
@@ -25,26 +25,27 @@
             <input id="Title" placeholder="Title" />
             <input id="ASalary"  placeholder="Annual Salary" />
         </div>
-
-    <button id="addEmployee">Add Employee</button>
+    <button class="btn-success" id="addEmployee">Add Employee</button>
     <h3> Employees </h3>
   
     <div class="containter">
-    <table class="table table-borded">
-        <tr>
+    <table class="table table-bordered">
+        <thead >
+            <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>ID</th>
             <th>Title</th>
             <th>Salary</th>
-        </tr>
-    </table>
-    <table id="newEmployee">
+            </tr>
+        </thead>
+        <tbody id="newEmployee">
 
+        </tbody>
     </table>
     </div>
 
-    <button id="removeEmployee">Remove Employee</button>
+    <button class='btn-danger' id="removeEmployee">Remove Employee</button>
 
     <h2 id="monthly"> Total Monthy : </h2>
 </body>
