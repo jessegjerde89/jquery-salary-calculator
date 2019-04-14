@@ -49,14 +49,12 @@ function addClick(){
    }  
    showEmployee( employee ); 
    console.log(employee); 
-   //pushing salaries to salaryArray array
-   salaryArray.push(newSalaryValue); 
-
+  
       //calculate the monthly salary for all emlpoyees
        monthlySalary = Math.round((sum / 12)); 
        sum = 0; 
      $('#monthly').empty(); 
-     $('#monthly').append('Total Monthy : ', monthlySalary ); 
+     $('#monthly').append('Total Monthy : $', monthlySalary ); 
      
      //when monthly salary becomes too high, background will highlight
      if (monthlySalary > 20000){
@@ -93,15 +91,17 @@ function removeClick(){
     $('#newEmployee tr:last').remove();
    
     
-    for( let i = 0; i < employee.length; i++){
+    for( let i = 0; i < (employee.length - 1); i++){
       newSalaryValue = employee[i].salary; 
+      console.log(newSalaryValue); 
       let el = (parseInt(newSalaryValue));
+      console.log(el); 
       sum += el; 
+      console.log(sum); 
       el = 0
  }  
-       //pushing salaries to salaryArray array
-      salaryArray.push(newSalaryValue); 
 
+      let removedSum = sum
       //calculate the monthly salary for all emlpoyees
        monthlySalary = Math.round((sum / 12)); 
        sum = 0; 
