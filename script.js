@@ -9,8 +9,9 @@ function readyNow(){
 
 $('#addEmployee').click('on', addClick );
 $('#removeEmployee').click('on', removeClick );
-
+$('.removeEmployee').popover({ trigger : 'focus'}); 
 }
+
 
 //Adds users to the dom
 function addClick(){
@@ -79,7 +80,7 @@ function showEmployee( employees ){
            <td> ${ employees[i].lName}</td>,
            <td> ${ employees[i].id}</td>,
            <td> ${ employees[i].title}</td>, 
-           <td> ${ employees[i].salary} </td> </tr> `;
+           <td>$ ${ employees[i].salary} </td> </tr> `;
                 
            //add new employee onto the dom
            newEmp.append(addedEmployee);
@@ -90,5 +91,26 @@ function showEmployee( employees ){
 //Removes users to the dom
 function removeClick(){
     $('#newEmployee tr:last').remove();
+   
+    
+    for( let i = 0; i < employee.length; i++){
+      newSalaryValue = employee[i].salary; 
+      let el = (parseInt(newSalaryValue));
+      sum += el; 
+      el = 0
+ }  
+       //pushing salaries to salaryArray array
+      salaryArray.push(newSalaryValue); 
+
+      //calculate the monthly salary for all emlpoyees
+       monthlySalary = Math.round((sum / 12)); 
+       sum = 0; 
+     $('#monthly').empty(); 
+     $('#monthly').append('Total Monthy : $', monthlySalary ); 
+     
+     //when monthly salary becomes too high, background will highlight
+     if (monthlySalary > 20000){
+      $('#monthly').css('background-color', '#FF6600').css('background-size', '30%');
+     }
 
 }
