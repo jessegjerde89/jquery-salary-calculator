@@ -89,19 +89,19 @@ function showEmployee( employees ){
 //Removes users to the dom
 function removeClick(){
     $('#newEmployee tr:last').remove();
-   
+    console.log(employee);
+    employee.pop(); 
+
+    showEmployee(employee)
     
-    for( let i = 0; i < (employee.length - 1); i++){
+    for( let i = 0; i < (employee.length); i++){
       newSalaryValue = employee[i].salary; 
       console.log(newSalaryValue); 
       let el = (parseInt(newSalaryValue));
-      console.log(el); 
       sum += el; 
-      console.log(sum); 
       el = 0
  }  
 
-      let removedSum = sum
       //calculate the monthly salary for all emlpoyees
        monthlySalary = Math.round((sum / 12)); 
        sum = 0; 
