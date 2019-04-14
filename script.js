@@ -83,21 +83,12 @@ function showEmployee( employees ){
                 
            //add new employee onto the dom
            newEmp.append(addedEmployee);
+  
         }
 } 
 
 //Removes users to the dom
-function removeClick( employees){
-  
-let newEmp = $('#newEmployee')
-  newEmp.empty(); 
-  
-const removeEmployee = `<tr> <td> ${ employees.fName }</td>,
-    <td> ${ employees.lName}</td>,
-    <td> ${ employees.id}</td>,
-    <td> ${ employees.title}</td>, 
-    <td> ${ employees.salary} </td> </tr> `;
-        
-    newEmp.remove(addedEmployee);
-    console.log(removeEmployee); 
+function removeClick(){
+    $('#newEmployee tr:last').remove();
+
 }
