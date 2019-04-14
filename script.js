@@ -9,14 +9,14 @@ function readyNow(){
 
 $('#addEmployee').click('on', addClick );
 $('#removeEmployee').click('on', removeClick );
-showEmployee( employee ); 
+
 }
 
 //Adds users to the dom
 function addClick(){
 
   //new object taking in values entered on the dom
-    const newEmployee = {
+    let newEmployee = {
         fName: $( '#FName' ).val(),
         lName: $( '#LName' ).val(),
         id: $( '#ID' ).val(),
@@ -24,18 +24,19 @@ function addClick(){
         salary: $( '#ASalary' ).val(),
     }
     //pushing input values to employee array
-   employee.push( newEmployee ); 
 
      //if any input values are not entered
    //an alert is triggered asking user to 
    //fill all input fields 
-   if (employee.fName == ' ' || employee.lName == ' ' || 
-      employee.id == ' ' || employee.title == ' ' || employee.salary == ' '){
-        alert ( 'Please enter values for all fields'); 
+   if (newEmployee.fName == '' || newEmployee.lName == '' || 
+      newEmployee.id == '' || newEmployee.title == '' || newEmployee.salary == ''){
+        newEmployee = {}; 
+        
+        alert ( 'Please enter values for all fields');  
       } else {
-    showEmployee(employee); 
+        employee.push( newEmployee ); 
+        // showEmployee(employee); 
     $('#FName, #LName, #ID, #Title, #ASalary').val(''); 
-      }
 
    //catching new salaries entered on DOM
    //into newSalaryValue
@@ -44,12 +45,14 @@ function addClick(){
         let el = (parseInt(newSalaryValue));
         sum += el; 
         el = 0
-   }
+   }  
+   showEmployee( employee ); 
+   console.log(employee); 
    //pushing salaries to salaryArray array
    salaryArray.push(newSalaryValue); 
 
       //calculate the monthly salary for all emlpoyees
-       monthlySalary = Math.round(((sum / salaryArray.length) / 12)); 
+       monthlySalary = Math.round((sum / 12)); 
        sum = 0; 
      $('#monthly').empty(); 
      $('#monthly').append('Total Monthy : ', monthlySalary ); 
@@ -58,13 +61,15 @@ function addClick(){
      if (monthlySalary > 20000){
       $('#monthly').css('background-color', '#FF6600');
      }
+    }
 }
 
+console.log(employee); 
 //function to take in new employee and enter it
 //onto the dom
 function showEmployee( employees ){
     let newEmp = $('#newEmployee')
-   
+   console.log(employees)
     //empty input variable
     newEmp.empty(); 
     
@@ -95,6 +100,4 @@ const removeEmployee = `<tr> <td> ${ employees.fName }</td>,
         
     newEmp.remove(addedEmployee);
     console.log(removeEmployee); 
-
-
 }

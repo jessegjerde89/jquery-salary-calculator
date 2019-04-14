@@ -16,16 +16,17 @@ button {
     margin: 1cm;
     size: 3cm;
 }
-/* table {
+table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
   
-  } */
+  }
   
   td, th, input{
     padding: 8px;
-    column-width: 2cm; 
+    column-width: 3cm; 
+
   }
   
   tr {
