@@ -58,8 +58,11 @@ function addClick(){
      
      //when monthly salary becomes too high, background will highlight
      if (monthlySalary > 20000){
-      $('#monthly').css('background-color', '#FF6600');
+      $('#monthly').toggleClass('highlight');
+     } else {
+      $('#monthly').removeClass('highlight'); 
      }
+
     }
 }
 
@@ -110,7 +113,9 @@ function removeClick(){
      
      //when monthly salary becomes too high, background will highlight
      if (monthlySalary > 20000){
-      $('#monthly').css('background-color', '#FF6600').css('background-size', '30%');
+      $('#monthly').toggleClass('highlight');
+     } else {
+      $('#monthly').removeClass('highlight'); 
      }
 
 }

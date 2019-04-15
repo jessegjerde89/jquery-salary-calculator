@@ -15,8 +15,6 @@ body {
     font-weight: bold; 
     background-color: rgb(235, 178, 200); 
     text-shadow: 2px #dddddd;
-    
-    
 }
 
 button {
@@ -26,25 +24,34 @@ button {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
-  
+    width: 88%; 
+    border
+    
   }
   
-  td, th, input{
+  tr:nth-child(even) 
+  {background-color: #f2f2f2;}
+
+  td, th{
     padding: 8px;
     column-width: 3cm; 
-
+  }
+  
+  table, th, td, tr {
+    border: 1px solid black;
   }
   
   tr {
-    background-color: #558dce;
-    column-width: 2cm; 
+    background-color: whitesmoke; 
+    column-width: 30%; 
   }
 
   .inputClass {
-
+      width: 90%; 
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-
+  }
+  .inputClass input {
+    width: 150px; 
   }
 
   #addEmployee {
@@ -53,6 +60,7 @@ table {
 
   #removeEmployee {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
   }
-  
+  .highlight{
+    background: red; 
+  }
