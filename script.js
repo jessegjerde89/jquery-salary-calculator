@@ -43,8 +43,11 @@ function addClick(){
    //into newSalaryValue
    for( let i = 0; i < employee.length; i++){
         newSalaryValue = employee[i].salary; 
+        console.log(newSalaryValue)
         let el = (parseInt(newSalaryValue));
+        console.log(el)
         sum += el; 
+        console.log(sum)
         el = 0
    }  
    showEmployee( employee ); 
@@ -101,6 +104,7 @@ function removeClick(){
       newSalaryValue = employee[i].salary; 
       console.log(newSalaryValue); 
       let el = (parseInt(newSalaryValue));
+      console.log(sum)
       sum += el; 
       el = 0
  }  
