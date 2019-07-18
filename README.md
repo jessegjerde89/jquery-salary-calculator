@@ -24,6 +24,11 @@ Javascript file that calculates monthly salary cost of all employees and highlig
 
 Simply need to run the index.html in your browser
 
+## Screenshot 
+![ScreenShot](Desktop/screeshots/calculator.png)
+
+<img src= "calculator.png">
+
 ## Authors
 
 Jesse Gjerde
